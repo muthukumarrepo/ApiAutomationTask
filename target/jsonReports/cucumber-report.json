@@ -1,0 +1,236 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-05-08T22:46:08.323Z",
+        "line": 13,
+        "name": "Verify GET response data",
+        "description": "",
+        "id": "validating-user-api;verify-get-response-data;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3145052400,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Valid user payload with \"Scofield\" and \"Automation\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Scofield\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"Automation\"",
+                  "offset": 39
+                }
+              ],
+              "location": "stepDefinitions.StepDefinition.valid_user_payload_with_and(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3861145900,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User calls \"registerUserAPI\" endpoint with \"post\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"registerUserAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"post\"",
+                  "offset": 43
+                }
+              ],
+              "location": "stepDefinitions.StepDefinition.user_calls_endpoint_with_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 587700800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User calls \"getUserAPI\" endpoint with \"get\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"getUserAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"get\"",
+                  "offset": 38
+                }
+              ],
+              "location": "stepDefinitions.StepDefinition.user_calls_endpoint_with_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3997800,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Api call returns status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 29
+                }
+              ],
+              "location": "stepDefinitions.StepDefinition.api_call_returns_status_code(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2600717500,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "verify respone contains user first_name as \"Byron\" and last_name as \"Fields\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Byron\"",
+                  "offset": 43
+                },
+                {
+                  "val": "\"Fields\"",
+                  "offset": 68
+                }
+              ],
+              "location": "stepDefinitions.StepDefinition.verify_respone_contains_user_first_name_as_and_last_name_as(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Validating User API",
+    "description": "  I want to validate user respose data contains a given data",
+    "id": "validating-user-api",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/getUser.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-05-08T22:46:18.782Z",
+        "line": 13,
+        "name": "Verify if error message is thrown when invalid payload is provided",
+        "description": "",
+        "id": "validating-user-api;verify-if-error-message-is-thrown-when-invalid-payload-is-provided;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 7994700,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Invalid user payload with \"sydney@fife\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"sydney@fife\"",
+                  "offset": 26
+                }
+              ],
+              "location": "stepDefinitions.StepDefinition.invalid_user_payload_with(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 762704200,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User calls \"registerUserAPI\" endpoint with \"post\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"registerUserAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"post\"",
+                  "offset": 43
+                }
+              ],
+              "location": "stepDefinitions.StepDefinition.user_calls_endpoint_with_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Api call returns status code 400",
+            "match": {
+              "arguments": [
+                {
+                  "val": "400",
+                  "offset": 29
+                }
+              ],
+              "location": "stepDefinitions.StepDefinition.api_call_returns_status_code(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 22985400,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "\"error\" in response body is \"Missing password\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"error\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"Missing password\"",
+                  "offset": 28
+                }
+              ],
+              "location": "stepDefinitions.StepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@InvaliduserRegister"
+          }
+        ]
+      }
+    ],
+    "name": "Validating User API",
+    "description": "  I want to validate user register with providing invalid data",
+    "id": "validating-user-api",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/postUser.feature",
+    "tags": []
+  }
+]
